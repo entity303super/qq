@@ -1,0 +1,383 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Убираем горизонтальную прокрутку */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url('background.webp'); /* Фон страницы */
+    background-color: rgba(0, 0, 0, 0.85); /* Тёмный фон */
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a;
+    padding: 15px 30px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 90px;
+    max-width: 100%;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav ul li a {
+    color: #ff0000;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.main-nav ul li a:hover {
+    color: #00e1ff;
+}
+
+/* Центрирование блока */
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    color: white;
+    gap: 20px; /* Расстояние между текстом и картинкой */
+    flex-wrap: wrap; /* Для адаптации на маленьких экранах */
+    height: calc(100vh - 100px); /* Центрируем, вычитая место для хедера и футера */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Текстовая часть */
+.content {
+    flex: 1;
+    max-width: 600px; /* Ограничиваем ширину текста */
+}
+
+.content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.content p,
+.content ul li {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.content ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.server-ip span {
+    color: #FFD700;
+    font-weight: bold;
+}
+
+/* Картинка */
+.image {
+    flex: 1;
+    max-width: 500px; /* Ограничиваем размер картинки */
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Footer */
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a;
+    padding: 20px 30px;
+    color: #ff0000;
+    text-align: center;
+    border-top: 2px solid #333;
+}
+
+.site-footer p {
+    color: #ff0000;
+    font-size: 1.2rem;
+}
+
+.site-footer a {
+    color: #ff0000;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.site-footer a:hover {
+    color: #00e1ff;
+}
+
+.site-footer img {
+    height: 40px;
+    margin: 0 10px;
+    transition: transform 0.3s;
+}
+
+.site-footer img:hover {
+    transform: scale(1.1);
+}
+
+.footer-left, .footer-center, .footer-right {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-left img {
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.footer-right img {
+    height: 50px;
+    margin-top: 10px;
+}
+
+/* Секция донатов */
+.donate-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Центрируем карточки */
+    gap: 20px; /* Расстояние между карточками */
+    margin-top: 40px; /* Отступ сверху */
+    padding: 20px;
+}
+
+.donate-card {
+    background-color: #1a1a1a; /* Тёмный фон карточки */
+    color: #ffffff; /* Белый текст */
+    border: 2px solid #ff0000; /* Красная рамка */
+    border-radius: 10px; /* Закруглённые углы */
+    padding: 20px;
+    width: 300px; /* Фиксированная ширина карточки */
+    text-align: center; /* Текст по центру */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Тень для объёма */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.donate-card:hover {
+    transform: scale(1.05); /* Лёгкое увеличение при наведении */
+    box-shadow: 0px 6px 15px rgba(255, 0, 0, 0.7); /* Яркая тень при наведении */
+}
+
+.donate-card h2 {
+    font-size: 1.8rem; /* Размер заголовка карточки */
+    margin-bottom: 15px;
+    color: #ff0000; /* Красный цвет названия доната */
+}
+
+.donate-card ul {
+    list-style: none; /* Убираем стандартные маркеры списка */
+    padding: 0;
+}
+
+.donate-card ul li {
+    font-size: 1.2rem; /* Размер текста в списке */
+    margin-bottom: 10px;
+    line-height: 1.5; /* Расстояние между строками */
+}
+
+.donate-card code {
+    font-family: 'Roboto Mono', monospace; /* Фиксированный шрифт для команд */
+    background-color: rgba(255, 255, 255, 0.1); /* Лёгкий фон для команд */
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+/* Адаптация для маленьких экранов */
+@media (max-width: 768px) {
+    .centered-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .content {
+        max-width: 100%;
+    }
+
+    .image {
+        max-width: 100%;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .main-nav ul li a {
+        font-size: 16px;
+    }
+}
+/* Стили для страницы доната */
+
+/* Центрирование текста на странице доната */
+.donate-page .donate-info {
+    text-align: center;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    color: white;
+}
+
+.donate-page .donate-info p {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* Анимация переливающегося текста */
+@keyframes rainbow-text {
+    0% { color: #ff0000; } /* Красный */
+    14% { color: #ffa500; } /* Оранжевый */
+    28% { color: #ffff00; } /* Желтый */
+    42% { color: #008000; } /* Зеленый */
+    56% { color: #00ffff; } /* Голубой */
+    70% { color: #0000ff; } /* Синий */
+    84% { color: #800080; } /* Фиолетовый */
+    100% { color: #ff0000; } /* Возврат к красному */
+}
+
+.donate-page .highlighted {
+    margin: 20px 0;
+    font-weight: bold;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    animation: rainbow-text 3s infinite; /* Анимация смены цветов каждые 3 секунды */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Легкая тень для контраста */
+}
+
+
+/* Исправление футера */
+.donate-page .site-footer {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 20px;
+    padding: 20px 30px;
+}
+
+.donate-page .footer-left, 
+.donate-page .footer-center, 
+.donate-page .footer-right {
+    flex: 1 1 100%; /* Занимает всю ширину в мобильной версии */
+    margin-bottom: 10px;
+}
+
+.donate-page .footer-left img,
+.donate-page .footer-right img {
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+/* Адаптивность */
+@media (min-width: 768px) {
+    .donate-page .footer-left,
+    .donate-page .footer-center,
+    .donate-page .footer-right {
+        flex: 1; /* На больших экранах элементы футера занимают равное пространство */
+        text-align: center;
+    }
+}
+/* Стили для блока CHORUS */
+.donate-card.chorus {
+    background: linear-gradient(45deg, #a51616, #ff0000, #e75b5b); /* Градиент зеленых оттенков */
+    -webkit-background-clip: text; /* Показываем только текст */
+    -webkit-text-fill-color: transparent; /* Убираем фон текста */
+    font-weight: bold;
+    animation: gradient-text 5s infinite; /* Анимация для плавного переливания */
+}
+
+.donate-card.chorus p {
+    line-height: 1.6;
+}
+
+.donate-card.chorus span.price {
+    color: #ff9900; /* Бирюзовый цвет для цены */
+    font-weight: bold; /* Жирный текст для акцента */
+}
+
+/* Стили для блока LEGEND */
+.donate-card.legend {
+    background: linear-gradient(45deg, #99aa35, #d5e220, #fffb00); /* Градиент зеленых оттенков */
+    -webkit-background-clip: text; /* Показываем только текст */
+    -webkit-text-fill-color: transparent; /* Убираем фон текста */
+    font-weight: bold;
+    animation: gradient-text 5s infinite; /* Анимация для плавного переливания */
+}
+
+.donate-card.legend p {
+    line-height: 1.6;
+}
+
+.donate-card.legend span.price {
+    color: #00FFFF; /* Бирюзовый цвет для цены */
+    font-weight: bold; /* Жирный текст для акцента */
+}
+
+/* Стили для блока SPONSOR */
+/* Заголовок SPONSOR с градиентом */
+.gradient-sponsor {
+    font-size: 2.5rem; /* Размер текста */
+    font-weight: bold; /* Жирный текст */
+    background: linear-gradient(90deg, #FF0000, #FFA500, #FFFF00, #008000, #0000FF, #4B0082, #EE82EE); /* Радужный градиент */
+    -webkit-background-clip: text; /* Применяем градиент только к тексту */
+    -webkit-text-fill-color: transparent; /* Убираем фон текста */
+    background-size: 300% 300%; /* Увеличиваем область градиента */
+    animation: gradient-animation 3s infinite; /* Плавная анимация */
+}
+
+/* Анимация градиента */
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+/* Анимация градиента для текста */
+@keyframes gradient-text {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
